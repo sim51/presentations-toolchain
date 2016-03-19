@@ -1,0 +1,57 @@
+= Presentation generator based on asciidoctor & revealjs
+
+== Presentation
+
+It's just a bundle of tool that make easy to create some cool presentation with asciidoctor and reveal.js.
+
+It uses :
+
+ * https://github.com/asciidoctor/asciidoctor-reveal.js to integrate asciidoctor & reveal.js
+ * phantomjs : to create pdf presentation
+ * Gulp : to make the glue between all the components, and permit to do :
+   * a good revealjs theme integration with less
+   * liverelaod (very usefull when creating a presentation)
+   * a dedicate webserver
+
+== Installation
+
+=== Requirement
+
+* asciidoctor with asciidoctor-diagram
+* node / npm / gulp
+* git
+
+=== how-to
+
+* checkout this repository
+* run `npm install`
+* run `npm install gulp -g`
+
+== How to use it
+
+=== Create a presentation
+
+A presentation is a folder under the root `slides` folder.
+
+Each presentation must follow thoses requirements :
+
+ * having a directory named `assets` where you can put all your static files
+ * having a directory names `slides` where you have to put all your asciidoctor file
+ * a file named `index.adoc` into the `slides` folder : it's the asciidoctor root file for your presentation
+
+And you can also add those lines in your index.adoc :
+
+----
+:revealjs_width: '100%'
+:revealjs_customtheme: /themes/neo4j/style/main.css
+:author: Benoit Simard (@logisima)
+----
+
+=== Command line tool
+
+* **gulp :** generate all your presentations into `dist` folder and launch a webserser with livereload functionnnality. As soon as you add/delete/modify a file, your browser automatcly refresh !
+* **gulp pdf :** generate the pdf for all your presentation into `dist` folder
+* **gulp build :** generate all your presentations into `dist` folder.
+
+With all of this command, you can use the `--prez` option to select only one presentation.
+For example `gulp pdf --prez slides/top_5_usecase/` will generate the pdf only for the specified presentation.

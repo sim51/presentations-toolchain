@@ -1,0 +1,31 @@
+{
+  "target_folder" : "./dist",
+  "tools_folder": "./toolchain",
+  "slides_folder": "./slides",
+  "slides_shared_folder": "./slides/shared",
+  "server" :{
+    "port": 8001
+  },
+  "generator": {
+    "github_asciidoctor_revealjs": "https://github.com/asciidoctor/asciidoctor-reveal.js",
+    "exec": "asciidoctor -r asciidoctor-diagram -T ./toolchain/asciidoctor-reveal.js/templates/slim  -a revealjsdir='/reveal.js' -a revealjs_history='true' -a idprefix='slide_' -D "
+  },
+  "theme": {
+    "less": {
+      "folder": "./toolchain/themes/*/style/",
+      "main": "main.less"
+    },
+    "assets": "./toolchain/themes/*/assets/**/*.*",
+    "dest": "./dist/themes"
+  },
+  "pdf": {
+    "port": 8888,
+    "exec": "./node_modules/phantomjs-prebuilt/bin/phantomjs ./toolchain/phantomjs/print-pdf.js "
+  },
+  "clean": {
+    "folder": [
+      "./toolchain/asciidoctor-reveal.js",
+      "./dist"
+    ]
+  }
+}
