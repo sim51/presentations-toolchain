@@ -9,3 +9,5 @@ gulp.task('watch', ['themes-watch', 'generate-watch']);
 
 gulp.task('build', ['generate']);
 gulp.task('default', ['build','webserver', 'watch']);
+
+gulp.task('deploy', ['gh-pages']);

@@ -27,5 +27,9 @@
       "./toolchain/asciidoctor-reveal.js",
       "./dist"
     ]
+  },
+  "ghPages" : {
+    "remoteUrl" : "git@github.com:sim51/presentations.git",
+    "branch": "gh-pages"
   }
 }
