@@ -8,7 +8,7 @@
   },
   "generator": {
     "github_asciidoctor_revealjs": "https://github.com/asciidoctor/asciidoctor-reveal.js",
-    "exec": "asciidoctor -r asciidoctor-diagram -T ./toolchain/asciidoctor-reveal.js/templates/slim  -a revealjsdir='/reveal.js' -a revealjs_history='true' -a idprefix='slide_' -D "
+    "exec": "asciidoctor -r asciidoctor-diagram -T ./toolchain/asciidoctor-reveal.js/templates/slim  -a revealjsdir='../reveal.js' -a revealjs_history='true' -a idprefix='slide_' -D "
   },
   "theme": {
     "less": {
