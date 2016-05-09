@@ -1,6 +1,5 @@
 .idea
 dist
 node_modules
-toolchain/asciidoctor-reveal.js
 slides
 .publish
