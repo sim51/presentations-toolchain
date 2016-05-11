@@ -43,6 +43,6 @@ page.open( inputFile, function( status ) {
 		console.log( 'Printed succesfully' );
 		page.render( outputFile );
 		phantom.exit();
-	}, 8000 );
+	}, 100000 );
 } );
 
