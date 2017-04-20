@@ -4,7 +4,7 @@
   "slides_folder": "./slides",
   "slides_shared_folder": "./slides/shared",
   "server" :{
-    "port": 8001
+    "port": 7001
   },
   "generator": {
     "github_asciidoctor_revealjs": "https://github.com/asciidoctor/asciidoctor-reveal.js",
