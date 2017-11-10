@@ -105,8 +105,9 @@ gulp.task('generate-watch', function () {
     if(argv.prez) {
         folderPath = argv.prez;
     }
-    var watchExp = [folderPath + '/**/*.*'];
+    var watchExp = [folderPath + '/**/*.*', '!' + folderPath + '/**/*.adoc.*'];
     watchExp.push(config.slides_shared_folder + '/**/*.*');
+    watchExp.push('!' + config.slides_shared_folder + '/**/*.adoc.*');
 
     // watching all asciidoctor
     watch(watchExp, {read: false, verbose: true}, function () {

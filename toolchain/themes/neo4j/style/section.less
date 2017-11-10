@@ -3,66 +3,139 @@ div.slides {
   width: 100% !important;
   height:100% !important;
 
-  // Content slide
+  font-family: 'Open Sans', sans-serif;
+  color:#53585f;
+
+  section {
+    height:100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  // Common to all title slide
+  & > section {
+      &::after {
+        content: "";
+        background: url("../assets/background-section.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        opacity: 0.8;
+        top: 5%;
+        left: 10%;
+        bottom: 5%;
+        right: 10%;
+        position: absolute;
+        z-index: -1;
+      }
+  }
+
+  // Presentation title slide
+  & > section:first-child {
+    background: url("../assets/logo-white.png") 90% 90% no-repeat,
+                linear-gradient(rgba(128, 182, 153, 1), rgba(130, 173, 206, 1)) 0 0 no-repeat;
+    background-size: 10%, 100%;
+
+    &::before {
+      content: "";
+      background: url("../assets/background-main.png") 0 0 no-repeat;
+      background-size: 100%;
+      opacity: 0.3;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -2;
+    }
+
+
+    & > h1 {
+      color: #FFF;
+      padding-top: 10%;
+      text-align:left;
+      padding-left: 100px;
+      font-weight: bolder;
+    }
+
+    p {
+      text-align : left;
+      color: #FFF;
+      padding-left: 100px;
+
+      small {
+        font-size: 1.0em;
+      }
+    }
+
+  }
+
+  // Section title slides
+  & > section > section:first-child {
+    background: url("../assets/logo-white.png") 90% 90% no-repeat,
+                linear-gradient(rgba(128, 182, 153, 0.7), rgba(130, 173, 206, 0.7)) 0 0 no-repeat;
+    background-size: 10%, 100%;
+
+    & > h2 {
+      text-align: center;
+      padding-top: 300px;
+      color: #FFF;
+    }
+
+  }
+
+  // Section slides
   & > section > section {
     height:100%;
     width: 100%;
     top: 0;
-    background: url("../assets/neo4j-logo-2015.png") no-repeat 1% 95%, url("../assets/background-footer.png") repeat-x left bottom;
+    background: url("../assets/logo-grey.png") no-repeat 1% 95%, url("../assets/background-footer.png");
+    background-repeat: no-repeat;
+    background-position: 99% 90%, 0 96%;
+    background-size:10%, 100%;
     background-color: #FFFFFF;
 
-    & > * {
-      padding: 0 30px
-    }
-    
     h2 {
       text-transform: none !important;
-    }
-    
-  }
-
-  // Title slide
-  & > section {
-    background-image: url("../assets/neo4j-logo-2015.png"), url("../assets/background-main.png");
-    background-repeat: no-repeat;
-    background-position: 1% 95%, 0 0;
-    background-size:auto, 100% 100%;;
-    background-color: transparent;
-    height:100%;
-
-    & > h1 {
-      padding-top: 300px;
-    }
-  }
-
-  // title slides
-  & > section > section:first-child {
-    background-image: url("../assets/neo4j-logo-2015.png"), url("../assets/background-main.png");
-    background-repeat: no-repeat;
-    background-position: 1% 95%, 0 0;
-    background-size:auto, 100% 100%;;
-    background-color: transparent;
-
-    & > h2 {
-      padding-top: 300px;
+      color: #000000;
+      text-align: left;
+      margin: 50px 100px 70px 100px;
+      color: #5d5d5d;
     }
 
+    h3 {
+      text-transform: none;
+      font-size: 1.5em;
+    }
+
+   div.split {
+    float: left;
+    max-height: 50%;
+    width:45%;
+    padding: 20px;
+
+   }
+
   }
-  
+
+
+
+
+
   .split7030 {
 
 	div.imageblock {
 	  float: right;
 	  width: 30%;
 	}
-	
+
 	div.paragraphe, div.ulist {
 	float: left;
 	width: 60%;
 	}
 
       }
-      
+
       .split5050 {
 
 	div.imageblock {
@@ -70,7 +143,7 @@ div.slides {
 	  width: 40%;
 	  margin-right:5%;
 	}
-	
+
 	div.paragraph, div.ulist {
 	float: left;
 	width: 40%;
