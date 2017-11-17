@@ -11,8 +11,8 @@
 var page = new WebPage();
 var system = require( 'system' );
 
-var slideWidth = system.args[3] ? system.args[3].split( 'x' )[0] : 1920;
-var slideHeight = system.args[3] ? system.args[3].split( 'x' )[1] : 1080;
+var slideWidth = 1920;
+var slideHeight = 1150;
 
 page.viewportSize = {
 	width: slideWidth,
@@ -43,6 +43,6 @@ page.open( inputFile, function( status ) {
 		console.log( 'Printed succesfully' );
 		page.render( outputFile );
 		phantom.exit();
-	}, 100000 );
+	}, 100 );
 } );
 
