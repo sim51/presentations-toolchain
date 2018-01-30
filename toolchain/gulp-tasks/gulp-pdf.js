@@ -19,6 +19,7 @@ function getSubFoldersList(dir) {
 }
 
 function generatePDFPresentation(url, pdfPath) {
+  console.log("PDF from " + url);
     var cmd = config.pdf.exec + '"' + url + '" ' + pdfPath;
     return child_process.exec(cmd);
 }
@@ -41,7 +42,7 @@ gulp.task('pdf', ['build'], function () {
     }
 
     var tasks = folders.map(function(folder) {
-        var url = 'http://localhost:' + config.pdf.port + '/' + folder + '/index.html?print-pdf';
+        var url = 'http://localhost:' + config.pdf.port + '/' + folder + 'index.html';
         var pdfPath = config.target_folder + '/' + folder + '/slides.pdf';
         return generatePDFPresentation(url, pdfPath);
     });

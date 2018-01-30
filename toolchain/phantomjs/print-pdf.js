@@ -12,7 +12,7 @@ var page = new WebPage();
 var system = require( 'system' );
 
 var slideWidth = 1920;
-var slideHeight = 1150;
+var slideHeight = 1080;
 
 page.viewportSize = {
 	width: slideWidth,
@@ -29,7 +29,7 @@ page.paperSize = {
 	border: 0
 };
 
-var inputFile = system.args[1] || 'index.html?print-pdf';
+var inputFile = system.args[1] || 'index.html';
 var outputFile = system.args[2] || 'slides.pdf';
 
 if( outputFile.match( /\.pdf$/gi ) === null ) {
@@ -43,6 +43,6 @@ page.open( inputFile, function( status ) {
 		console.log( 'Printed succesfully' );
 		page.render( outputFile );
 		phantom.exit();
-	}, 100 );
+	}, 2000 );
 } );
 
