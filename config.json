@@ -1,5 +1,5 @@
 {
-  "target_folder" : "./slides/dist",
+  "target_folder" : "./slides/docs",
   "tools_folder": "./toolchain",
   "slides_folder": "./slides",
   "slides_shared_folder": "./slides/shared",
@@ -16,7 +16,7 @@
       "main": "main.less"
     },
     "assets": "./toolchain/themes/*/assets/**/*.*",
-    "dest": "./slides/dist/themes"
+    "dest": "./slides/docs/themes"
   },
   "pdf": {
     "port": 8888,
@@ -25,7 +25,7 @@
   "clean": {
     "folder": [
       "./toolchain/asciidoctor-reveal.js",
-      "./slides/dist"
+      "./slides/docs"
     ]
   }
 }
