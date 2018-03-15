@@ -105,7 +105,7 @@ gulp.task('generate-watch', function () {
     if(argv.prez) {
         folderPath = argv.prez;
     }
-    var watchExp = [folderPath + '/**/*.*', '!' + folderPath + '/**/*.adoc.*'];
+    var watchExp = [folderPath + '/**/*.*', '!' + folderPath + '/**/*.adoc.*', '!' + folderPath + '/dist'];
     watchExp.push(config.slides_shared_folder + '/**/*.*');
     watchExp.push('!' + config.slides_shared_folder + '/**/*.adoc.*');
 

@@ -1,5 +1,5 @@
 {
-  "target_folder" : "./dist",
+  "target_folder" : "./slides/dist",
   "tools_folder": "./toolchain",
   "slides_folder": "./slides",
   "slides_shared_folder": "./slides/shared",
@@ -16,7 +16,7 @@
       "main": "main.less"
     },
     "assets": "./toolchain/themes/*/assets/**/*.*",
-    "dest": "./dist/themes"
+    "dest": "./slides/dist/themes"
   },
   "pdf": {
     "port": 8888,
@@ -25,11 +25,7 @@
   "clean": {
     "folder": [
       "./toolchain/asciidoctor-reveal.js",
-      "./dist"
+      "./slides/dist"
     ]
-  },
-  "ghPages" : {
-    "remoteUrl" : "git@github.com:sim51/presentations.git",
-    "branch": "gh-pages"
   }
 }

@@ -20,8 +20,9 @@ function getSubFoldersList(dir) {
 
 function generatePDFPresentation(url, pdfPath) {
   console.log("PDF from " + url);
-    var cmd = config.pdf.exec + '"' + url + '" ' + pdfPath;
-    return child_process.exec(cmd);
+  var cmd = config.pdf.exec + '"' + url + '" ' + pdfPath;
+  console.log(cmd);
+  return child_process.exec(cmd);
 }
 
 /**
@@ -42,7 +43,7 @@ gulp.task('pdf', ['build'], function () {
     }
 
     var tasks = folders.map(function(folder) {
-        var url = 'http://localhost:' + config.pdf.port + '/' + folder + 'index.html';
+        var url = 'http://localhost:' + config.pdf.port + '/' + folder + '/index.html';
         var pdfPath = config.target_folder + '/' + folder + '/slides.pdf';
         return generatePDFPresentation(url, pdfPath);
     });
