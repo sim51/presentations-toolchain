@@ -15,6 +15,9 @@ function getSubFoldersList(dir) {
     return fs.readdirSync(dir)
         .filter(function(file) {
             return fs.statSync(path.join(dir, file)).isDirectory();
+        })
+        .filter(function(file) {
+          return !(file.startsWith('.') || file === 'docs')
         });
 }
 

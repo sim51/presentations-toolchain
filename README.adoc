@@ -26,6 +26,7 @@ It uses :
 * checkout this repository
 * run `npm install`
 * run `npm install gulp -g`
+* run `npm install -g decktape`
 
 == How to use it
 
